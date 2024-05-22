@@ -86,3 +86,34 @@ const [x2, y2] = graph;
 
 // -----------------------------------------
 
+// ** TypeScript Object Types
+// explicit
+const carExp: { type: string, model: string, year: number } = {
+  type: "Toyota",
+  model: "Corolla",
+  year: 2009
+};
+//implicit
+const carImp = {
+  type: "Toyota",
+};
+
+// -----------------------------------------
+
+//** Optional Properties
+// Optional properties are properties that don't have to be defined in the object definition.
+
+const carWOptions: { type: string, mileage?: number } = { // no error
+  type: "Toyota"
+};
+carWOptions.mileage = 2000;
+
+// -----------------------------------------
+
+//** Index Signatures
+// Index signatures can be used for objects without a defined list of properties.
+
+const nameAgeMap: { [index: string]: number } = {};
+nameAgeMap.Jack = 25; // no error
+//? nameAgeMap.Mark = "Fifty"; // Error: Type 'string' is not assignable to type 'number'.
+
